@@ -7,7 +7,8 @@
 html, body {
   height: 100%;
   margin: 0px;
-  background-color: #A6C0B7;
+  background-color: lightgray;
+  font-family: 'Roboto', sans-serif;
 }
 
 #navbar {
@@ -30,12 +31,13 @@ html, body {
   text-decoration: none;
   color: black;
   padding: 10px 15px;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
 
 #navbar a:hover {
-  background-color: #ddd;
+  /* background-color: #ddd; */
   color: #f2f2f2;
+  border-bottom: solid 1px #ddd
 }
 
 /* #navbar a.active {
@@ -52,15 +54,22 @@ html, body {
   padding-top: 45vh;
 }
 
+#welcome-section h2{
+  color: #A9523E;
+}
+
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
 }
 
 h2 {
   text-align: center;
   font-size: 20px;
-  color: #A9523E;
+  font-weight: 300;
+  font-style: italic;
 }
 
 #projects {
@@ -119,6 +128,7 @@ h2 {
   list-style: none;
   padding-left: 0px;
   cursor: pointer;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 #film-list li:hover {
