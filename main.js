@@ -2,7 +2,6 @@ import { films } from '/assets/films.js'
 // import { people } from '/assets/people.js'
 //import { starships } from '/assets/starships.js'
 //import { planets } from '/assets/planets.js'
-import { senatorData } from './assets/senators.js'
 
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -41,34 +40,6 @@ films.forEach((film) => {
   crawlList.appendChild(listItem3)
   console.log(film.opening_crawl)
 })
-
-const senators = senatorData.results[0].members
-
-const republicans = senators.filter(senator => senator.party === "R")
-
-const democrats = senators.filter(senator => senator.party === 'D')
-
-const males = senators.filter(senator => senator.gender === "M")
-
-const females = senators.filter(senator => senator.gender === "F")
-
-const loyalRepublican = republicans.reduce((acc, senator) => senator.votes_with_party_pct > 0 ? senator : acc, 0)
-
-console.log(`There are ${republicans.length} republicans and ${democrats.length} democrats in the Senate.`)
-
-console.log(`There are ${males.length} men and ${females.length} women in the senate.`)
-
-
-// let personList = document.querySelector("#person-list")
-
-// people.forEach((people) => {
-//   let listItem2 = document.createElement('li')
-//   listItem2.textContent = people.name
-//   personList.appendChild(listItem2)
-//   console.log(people.name)
-// })
-//console.log(films[2])
-
 
 
 
