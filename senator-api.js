@@ -35,7 +35,7 @@ senWithPics.forEach(senator => {
 let senatorPic = document.createElement('img')
 let senatorFig = document.createElement('figure')
 let senatorCap = document.createElement('figcaption')
-senatorCap.textContent = `${senator.first_name} ${senator.last_name} (${senator.party}), ${senator.state}`
+senatorCap.textContent = `${senator.first_name} ${senator.last_name} (${senator.party} - ${senator.state})`
 senatorPic.src = senator.imgURL
 senatorFig.appendChild(senatorPic)
 senatorFig.appendChild(senatorCap)
