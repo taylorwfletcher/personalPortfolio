@@ -84,6 +84,11 @@ h2 {
   text-align: center;
 }
 
+#about img {
+  width: 100px;
+  height: 100px;
+}
+
 #projects {
   min-height: 55vh;
   padding-top: 45vh;
