@@ -258,7 +258,7 @@ figcaption {
 /* pokemon page */
 nav {
   background-color: white;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 2px 0px rgba(0,0,0,0.2);
   width: 100%;
 }
 
@@ -321,4 +321,16 @@ nav {
 .card__face--back {
   background: blue;
   transform: rotateY(180deg);
+}
+
+fieldset {
+  background-color: rgb(241, 241, 241);
+  border: rgb(34, 34, 34) solid 1px;
+  border-radius: 10px;
+  margin-left: 33.3%;
+  margin-right: 33.3%;
+}
+
+form {
+  
 }
