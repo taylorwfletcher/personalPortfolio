@@ -101,7 +101,7 @@ h2 {
   justify-content: space-evenly;
 }
 
-.card {
+.project-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
@@ -109,7 +109,7 @@ h2 {
   width: 200px;
 }
 
-.card:hover {
+.project-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3)
 }
 
@@ -253,4 +253,72 @@ svg:hover {
 
 figcaption {
   text-align: center;
+}
+
+/* pokemon page */
+nav {
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 100%;
+}
+
+
+.pokelogo {
+  height: 75px;
+  padding: 10px;
+}
+
+#poke-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#poke-container figure {
+  background-color: white;
+  border: thin #c0c0c0 solid;
+  border-radius: 8px;
+  display: flex;
+  flex-flow: column;
+  margin: 12px;
+  padding: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+}
+
+#poke-container figcaption {
+  background-color: rgba(0, 0, 0, 0.733);
+  color: white;
+  font-style: italic;
+}
+
+.card {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: red;
+}
+
+.card__face--back {
+  background: blue;
+  transform: rotateY(180deg);
 }
