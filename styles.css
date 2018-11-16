@@ -78,8 +78,8 @@ h2 {
 }
 
 #about {
-  min-height: 55vh;
-  padding-top: 45vh;
+  min-height: 65vh;
+  padding-top: 35vh;
   background-color: #85b1a4;
   text-align: center;
 }
@@ -89,9 +89,15 @@ h2 {
   height: 100px;
 }
 
+#skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 #projects {
-  min-height: 55vh;
-  padding-top: 45vh;
+  min-height: 65vh;
+  padding-top: 35vh;
   background-color: lightgray;
   text-align: center;
 }
@@ -262,6 +268,10 @@ nav {
   width: 100%;
 }
 
+.wrapper {
+  margin: 0 auto;
+  max-width: 1500px;
+}
 
 .pokelogo {
   height: 75px;
@@ -303,14 +313,14 @@ nav {
 }
 
 .card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 260px;
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height: 100%; */
+  /* line-height: 260px; */
   color: white;
   text-align: center;
-  font-weight: bold;
-  font-size: 40px;
+  /* font-weight: bold; */
+  /* font-size: 40px; */
   backface-visibility: hidden;
 }
 
@@ -319,8 +329,29 @@ nav {
 }
 
 .card__face--back {
-  background: blue;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 405px;
+  height: 423px;
+  background: #444444;
   transform: rotateY(180deg);
+  margin: 12px;
+  padding: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  border-radius: 8px;
+}
+
+.infoName {
+  text-align: center;
+  background-color: #3B4CCA;
+}
+
+.card__face--back p {
+  padding: 15px 15px 15px 30px;
+  font-size: 20px;
+  text-align: left;
+  border: 1px solid #3B4CCA;
 }
 
 fieldset {
@@ -329,8 +360,4 @@ fieldset {
   border-radius: 10px;
   margin-left: 33.3%;
   margin-right: 33.3%;
-}
-
-form {
-  
 }
