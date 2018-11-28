@@ -32,12 +32,13 @@ console.log(senWithPics)
 
 let pictureDiv = document.querySelector('.senContainer')
 senWithPics.forEach(senator => {
-let senatorPic = document.createElement('img')
-let senatorFig = document.createElement('figure')
-let senatorCap = document.createElement('figcaption')
-senatorCap.textContent = `${senator.first_name} ${senator.last_name} (${senator.party} - ${senator.state})`
-senatorPic.src = senator.imgURL
-senatorFig.appendChild(senatorPic)
-senatorFig.appendChild(senatorCap)
-pictureDiv.appendChild(senatorFig)
-})
+    let senatorPic = document.createElement('img')
+    let senatorFig = document.createElement('figure')
+    senatorFig.className = "sen-card"
+    let senatorCap = document.createElement('figcaption')
+    senatorCap.textContent = `${senator.first_name} ${senator.last_name} (${senator.party} - ${senator.state})`
+    senatorPic.src = senator.imgURL
+    senatorFig.appendChild(senatorPic)
+    senatorFig.appendChild(senatorCap)
+    pictureDiv.appendChild(senatorFig)
+    })

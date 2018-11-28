@@ -101,7 +101,7 @@ html, body {
 
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Playfair Display', serif;
   font-weight: 900;
 }
@@ -291,6 +291,14 @@ background-color: red;
 .senContainer {
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
+}
+
+.sen-card {
+  border: 1px solid #666;
+  padding: 10px;
+  border-radius: 5px;
+  word-wrap: break-word;
 }
 
 figcaption {
