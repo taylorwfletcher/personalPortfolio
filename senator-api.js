@@ -42,3 +42,36 @@ senWithPics.forEach(senator => {
     senatorFig.appendChild(senatorCap)
     pictureDiv.appendChild(senatorFig)
     })
+
+let statsDiv = document.querySelector('.senStats')
+let loyalRep = document.createElement('h2')
+let loyalDem = document.createElement('h2')
+let senGender = document.createElement('h2')
+let senSplit = document.createElement('h2')
+loyalRep.textContent = `The most loyal Republican is Senator ${loyalRepublican.first_name} ${loyalRepublican.last_name} from ${loyalRepublican.state}.`
+loyalDem.textContent = `The most loyal Democrat is Senator ${loyalDemocrat.first_name} ${loyalDemocrat.last_name} from ${loyalDemocrat.state}.`
+senGender.textContent = `There are ${males.length} men and ${females.length} women in the senate.`
+senSplit.textContent = `The senate is made up of ${republicans.length} Republicans and ${democrats.length} Democrats.`
+statsDiv.appendChild(senGender)
+statsDiv.appendChild(senSplit)
+statsDiv.appendChild(loyalRep)
+statsDiv.appendChild(loyalDem)
+
+
+// SCROLL TO TOP BUTTON --------------------------------------------------------------
+// When the user scrolls down 250px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 20) {
+        document.getElementById("senBtn").style.display = "block";
+    } else {
+        document.getElementById("senBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
