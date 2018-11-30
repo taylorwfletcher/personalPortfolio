@@ -49,24 +49,38 @@ pokemon.forEach(poke => {
       });
 })
 
-let newCard = {
-    "base": {
-        "Attack": 49, 
-        "Defense": 49, 
-        "HP": 45, 
-        "Sp.Atk": 65, 
-        "Sp.Def": 65, 
-        "Speed": 45
-    }, 
-    "cname": "\u5999\u86d9\u79cd\u5b50", 
-    "ename": "Bulbasaur", 
-    "id": "001", 
-    "jname": "\u30d5\u30b7\u30ae\u30c0\u30cd", 
-    "type": [
-        "\u8349", 
-        "\u6bd2"
-    ]
+class Pokemon {
+    constructor(id, ename, base){
+        this.id = id,
+        this.ename = ename,
+        this.base = base
+    }
 }
+
+let newPokemon = new Pokemon(150, "Mewtwo", {"Attack": 49, "Defense": 49, "HP": 45})
+
+
+let button = document.querySelector('newCardButton')
+button.addEventListener()
+
+// let newCard = {
+//     "base": {
+//         "Attack": 49, 
+//         "Defense": 49, 
+//         "HP": 45, 
+//         "Sp.Atk": 65, 
+//         "Sp.Def": 65, 
+//         "Speed": 45
+//     }, 
+//     "cname": "\u5999\u86d9\u79cd\u5b50", 
+//     "ename": "Bulbasaur", 
+//     "id": "001", 
+//     "jname": "\u30d5\u30b7\u30ae\u30c0\u30cd", 
+//     "type": [
+//         "\u8349", 
+//         "\u6bd2"
+//     ]
+// }
 // pokemon.forEach(poke => {
 
 //     let card = document.createElement('div')

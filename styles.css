@@ -286,7 +286,7 @@ background-color: red;
   color: yellow;
   background-color: black;
 }
-/* ------------------------- SENATOR PAGE ------------------------- */
+/* --------------------------------------- SENATOR PAGE --------------------------------------- */
 
 #senBtn {
   display: none;
@@ -296,7 +296,7 @@ background-color: red;
   z-index: 99; 
   border: none;
   outline: none;
-  background-color: rgb(85, 138, 236);
+  background-color: #666;
   color: rgb(235, 233, 233);
   cursor: pointer;
   padding: 10px;
@@ -309,26 +309,21 @@ background-color: red;
 }
 
 #senBtn:hover {
-  background-color: rgb(74, 119, 202);
+  background-color: rgb(85, 85, 85);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.35);
 }
 
 /* The hero image */
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/senator-img/capitol.jpg");
-
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
+  height: 55%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  background-attachment: fixed;
 }
 
-/* Place text in the middle of the image */
 .hero-text {
   text-align: center;
   position: absolute;
@@ -348,6 +343,48 @@ background-color: red;
   padding: 20px;
 }
 
+/* filter buttons -------------------------*/
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+#filterBtnContainer {
+  width: 380px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+.btn {
+border: none;
+outline: none;
+padding: 12px 16px;
+background-color: #f1f1f1;
+cursor: pointer;
+}
+
+.btn:hover {
+background-color: #ddd;
+}
+
+.btn.active {
+background-color: #666;
+color: white;
+}
+/* end filter buttons -------------------------*/
+
 .senContainer {
   display: flex;
   flex-wrap: wrap;
@@ -355,6 +392,7 @@ background-color: red;
   justify-content: center;
   margin: 40px 0x;;
   max-width: 1800px;
+  overflow: hidden;
 }
 
 .sen-card {
@@ -473,4 +511,9 @@ fieldset {
   border: rgb(34, 34, 34) solid 1px;
   border-radius: 10px;
   margin: 70px 33.3%;
+}
+
+#newCardButton {
+  margin: 70px 45vw;
+  text-align: center;
 }

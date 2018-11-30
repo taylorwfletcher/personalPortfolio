@@ -14,6 +14,8 @@ const loyalRepublican = republicans.reduce((acc, senator) => senator.votes_with_
 
 const loyalDemocrat = democrats.reduce((acc, senator) => senator.votes_with_party_pct > 0 ? senator : acc, 0)
 
+// const senMajLead = senators.reduce(acc, senator => senator.leadership_role === "Majority Leader" ? senator : acc, 0)
+
 console.log(`There are ${republicans.length} republicans and ${democrats.length} democrats in the Senate.`)
 
 console.log(`There are ${males.length} men and ${females.length} women in the senate.`)
@@ -21,6 +23,8 @@ console.log(`There are ${males.length} men and ${females.length} women in the se
 console.log(`The most loyal republican is Senator ${loyalRepublican.first_name} ${loyalRepublican.last_name}.`)
 
 console.log(`The most loyal democrat is Senator ${loyalDemocrat.first_name} ${loyalDemocrat.last_name}.`)
+
+// console.log(`${senMajLead.first_name} ${senMajLead.last_name} is the Senate Majority Leader.`)
 
 
 const senWithPics = senators.map(senator => {
@@ -44,12 +48,12 @@ senWithPics.forEach(senator => {
     })
 
 let statsDiv = document.querySelector('.senStats')
-let loyalRep = document.createElement('h2')
-let loyalDem = document.createElement('h2')
-let senGender = document.createElement('h2')
-let senSplit = document.createElement('h2')
-loyalRep.textContent = `The most loyal Republican is Senator ${loyalRepublican.first_name} ${loyalRepublican.last_name} from ${loyalRepublican.state}.`
-loyalDem.textContent = `The most loyal Democrat is Senator ${loyalDemocrat.first_name} ${loyalDemocrat.last_name} from ${loyalDemocrat.state}.`
+let loyalRep = document.createElement('p')
+let loyalDem = document.createElement('p')
+let senGender = document.createElement('p')
+let senSplit = document.createElement('p')
+loyalRep.textContent = `The most loyal Republican is Senator ${loyalRepublican.first_name} ${loyalRepublican.last_name} who has voted along party lines ${loyalRepublican.votes_with_party_pct}% of the time.`
+loyalDem.textContent = `The most loyal Democrat is Senator ${loyalDemocrat.first_name} ${loyalDemocrat.last_name} who has voted along party lines ${loyalDemocrat.votes_with_party_pct}% of the time.`
 senGender.textContent = `There are ${males.length} men and ${females.length} women in the senate.`
 senSplit.textContent = `The senate is made up of ${republicans.length} Republicans and ${democrats.length} Democrats.`
 statsDiv.appendChild(senGender)
@@ -63,7 +67,7 @@ statsDiv.appendChild(loyalDem)
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 20) {
         document.getElementById("senBtn").style.display = "block";
     } else {
         document.getElementById("senBtn").style.display = "none";
