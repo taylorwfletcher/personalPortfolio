@@ -514,6 +514,10 @@ fieldset {
 }
 
 #newCardButton {
-  margin: 70px 45vw;
+  margin: 0 auto;
+  width: 85px;
+  display: block;
   text-align: center;
+  margin-top: 32px;
+  padding: 15px;
 }

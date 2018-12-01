@@ -50,55 +50,27 @@ pokemon.forEach(poke => {
 })
 
 class Pokemon {
-    constructor(id, ename, base){
+    constructor(id, jname, ename, base, type){
         this.id = id,
+        this.jname = jname;
         this.ename = ename,
-        this.base = base
+        this.base = base,
+        this.type = type
     }
 }
 
-let newPokemon = new Pokemon(150, "Mewtwo", {"Attack": 49, "Defense": 49, "HP": 45})
+let newPokemon = new Pokemon(249, "\u30eb\u30ae\u30a2", "Lugia", {"Attack": 90, "Defense": 130, "HP": 106}, ["\u8d85\u80fd", "\u98de\u884c"])
 
 
-let button = document.querySelector('newCardButton')
-button.addEventListener()
-
-// let newCard = {
-//     "base": {
-//         "Attack": 49, 
-//         "Defense": 49, 
-//         "HP": 45, 
-//         "Sp.Atk": 65, 
-//         "Sp.Def": 65, 
-//         "Speed": 45
-//     }, 
-//     "cname": "\u5999\u86d9\u79cd\u5b50", 
-//     "ename": "Bulbasaur", 
-//     "id": "001", 
-//     "jname": "\u30d5\u30b7\u30ae\u30c0\u30cd", 
-//     "type": [
-//         "\u8349", 
-//         "\u6bd2"
-//     ]
-// }
-// pokemon.forEach(poke => {
-
-//     let card = document.createElement('div')
-//     console.log(poke.ename)
-//     let fig = document.createElement('figure')
-//     let img = document.createElement('img')
-//     let cap = document.createElement('figcaption')
-//     let backDiv = document.createElement('div')
-//     backDiv.textContent = poke.cname
-//     cap.textContent = poke.ename
-//     img.src = `./assets/pokemon-img/${poke.id}${poke.ename}.png`
-//     fig.appendChild(img)
-//     fig.appendChild(cap)
-//     card.appendChild(fig)
-//     card.appendChild(backDiv)
-//     pokeContainer.appendChild(card)
-//     card.classList.add("card")
-//     card.addEventListener( 'click', function() {
-//         card.classList.toggle('is-flipped');
-//       });
-// });
+let button = document.querySelector('#newCardButton')
+button.addEventListener('click', () => {
+    console.log('Creating card...')
+    let card = document.createElement('div')
+    card.className = "card"
+    card.appendChild(frontFig(newPokemon))
+    card.appendChild(infoDiv(newPokemon))
+    pokeContainer.appendChild(card)
+    card.addEventListener( 'click', function() {
+         card.classList.toggle('is-flipped');
+    });
+})
