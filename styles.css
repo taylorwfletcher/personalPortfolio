@@ -16,21 +16,6 @@ html, body {
 }
 
 /* navbar */
-/* #navbar {
-  text-align: center;
-  overflow: hidden;
-  background-color: rgba(95, 95, 95, 0.932);
-  font-size: 20px;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 0px;
-  padding-right: 24px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-} */
 #navbar {
   position: fixed;
   top: 50%;
@@ -335,12 +320,21 @@ background-color: red;
 
 .senStats {
   background-color: #e0e0e0;
-  border: 1px solid #666;
   border-radius: 5px;
-  width: 570px;;
+  width: 700px;;
   margin: auto;
   margin-top: 16px;
   padding: 20px;
+}
+
+.senStats h2 {
+  font-size: 25px;
+}
+
+.statsBody {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
 }
 
 /* filter buttons -------------------------*/
@@ -369,6 +363,7 @@ background-color: red;
 
 .btn {
 border: none;
+border-radius: 5px;
 outline: none;
 padding: 12px 16px;
 background-color: #f1f1f1;
@@ -393,6 +388,11 @@ color: white;
   margin: 40px 0x;;
   max-width: 1800px;
   overflow: hidden;
+  margin: 0 auto;
+}
+
+.senContainer img {
+  width: 200px;
 }
 
 .sen-card {
@@ -407,6 +407,63 @@ figcaption {
   text-align: center;
   color: black;
   margin-top: 5px;
+  white-space: pre;
+}
+
+#partyGraph {
+  display: block;
+  width: 700px;
+  margin: 0 auto;
+}
+
+#genderGraph {
+  display: block;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.partyGraphPiece {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  font-size: 12px;
+  width: 213.333px;
+}
+
+.genderGraphPiece {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  font-size: 12px;
+  width: 330px;
+}
+
+.repGraph {
+  background-color: #db1a21;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.demGraph {
+background-color: #00aef3;
+}
+
+.indieGraph {
+background-color: grey;
+border-bottom-right-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+.maleGraph {
+background-color: blue;
+border-bottom-left-radius: 5px;
+border-top-left-radius: 5px;
+}
+
+.femGraph {
+background-color: palevioletred;
+border-bottom-right-radius: 5px;
+border-top-right-radius: 5px;
 }
 
 /* ------------------------- POKEMON PAGE ------------------------- */

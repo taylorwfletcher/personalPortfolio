@@ -6,6 +6,8 @@ const republicans = senators.filter(senator => senator.party === "R")
 
 const democrats = senators.filter(senator => senator.party === 'D')
 
+const independents = senators.filter(senator => senator.party === 'I')
+
 const males = senators.filter(senator => senator.gender === "M")
 
 const females = senators.filter(senator => senator.gender === "F")
@@ -14,7 +16,9 @@ const loyalRepublican = republicans.reduce((acc, senator) => senator.votes_with_
 
 const loyalDemocrat = democrats.reduce((acc, senator) => senator.votes_with_party_pct > 0 ? senator : acc, 0)
 
-// const senMajLead = senators.reduce(acc, senator => senator.leadership_role === "Majority Leader" ? senator : acc, 0)
+const senMajLead = senators.filter(senator => senator.leadership_role === "Majority Leader")
+
+const senMinLead = senators.filter(senator => senator.leadership_role === "Minority Leader")
 
 console.log(`There are ${republicans.length} republicans and ${democrats.length} democrats in the Senate.`)
 
@@ -24,11 +28,19 @@ console.log(`The most loyal republican is Senator ${loyalRepublican.first_name} 
 
 console.log(`The most loyal democrat is Senator ${loyalDemocrat.first_name} ${loyalDemocrat.last_name}.`)
 
-// console.log(`${senMajLead.first_name} ${senMajLead.last_name} is the Senate Majority Leader.`)
+console.log(senMajLead, senMinLead)
+
+console.log(`${senMajLead[0].first_name} ${senMajLead[0].last_name} is the Senate Majority Leader.`)
+
+console.log(`${senMinLead[0].first_name} ${senMinLead[0].last_name} is the Senate Minority Leader.`)
 
 
+// SENATOR CARDS --------------------------------------------------------------
 const senWithPics = senators.map(senator => {
     senator.imgURL = `https://www.govtrack.us/data/photos/${senator.govtrack_id}-200px.jpeg`
+    if(senator.govtrack_id === '412743') {
+        senator.imgURL = './assets/senator-img/Cindy_Hyde-Smith.jpg'
+    }
     return senator
 })
 
@@ -40,30 +52,66 @@ senWithPics.forEach(senator => {
     let senatorFig = document.createElement('figure')
     senatorFig.className = "sen-card"
     let senatorCap = document.createElement('figcaption')
-    senatorCap.textContent = `${senator.first_name} ${senator.last_name} (${senator.party} - ${senator.state})`
+    senatorCap.textContent = `${senator.first_name} ${senator.last_name} \n (${senator.party} - ${senator.state})`
     senatorPic.src = senator.imgURL
     senatorFig.appendChild(senatorPic)
     senatorFig.appendChild(senatorCap)
     pictureDiv.appendChild(senatorFig)
     })
 
-let statsDiv = document.querySelector('.senStats')
+// STATS SECTION --------------------------------------------------------------
+let loyalty = document.querySelector('#loyalty')
 let loyalRep = document.createElement('p')
+loyalRep.className = "statsBody"
 let loyalDem = document.createElement('p')
-let senGender = document.createElement('p')
-let senSplit = document.createElement('p')
+loyalDem.className = "statsBody"
 loyalRep.textContent = `The most loyal Republican is Senator ${loyalRepublican.first_name} ${loyalRepublican.last_name} who has voted along party lines ${loyalRepublican.votes_with_party_pct}% of the time.`
 loyalDem.textContent = `The most loyal Democrat is Senator ${loyalDemocrat.first_name} ${loyalDemocrat.last_name} who has voted along party lines ${loyalDemocrat.votes_with_party_pct}% of the time.`
-senGender.textContent = `There are ${males.length} men and ${females.length} women in the senate.`
-senSplit.textContent = `The senate is made up of ${republicans.length} Republicans and ${democrats.length} Democrats.`
-statsDiv.appendChild(senGender)
-statsDiv.appendChild(senSplit)
-statsDiv.appendChild(loyalRep)
-statsDiv.appendChild(loyalDem)
+loyalty.appendChild(loyalRep)
+loyalty.appendChild(loyalDem)
+
+// PARTY GRAPH --------------------------------------------------------------
+let graphDiv = document.querySelector('#partyGraph')
+let repSection = document.createElement('p')
+repSection.className = "repGraph partyGraphPiece"
+let demSection = document.createElement('p')
+demSection.className = "demGraph partyGraphPiece"
+let indieSection = document.createElement('p')
+indieSection.className = "indieGraph partyGraphPiece"
+repSection.textContent = `${republicans.length} Republicans`
+demSection.textContent = `${democrats.length} Democrats`
+indieSection.textContent = `${independents.length} Independents`
+graphDiv.appendChild(repSection)
+graphDiv.appendChild(demSection)
+graphDiv.appendChild(indieSection)
+// document.getElementById("repSection").style.width = `${republicans.length}%`;
+// document.getElementById("demSection").style.width = `${democrats.length}%`;
+// document.getElementById("indieSection").style.width = `${independents.length}%`;
+
+// GENDER GRAPH --------------------------------------------------------------
+let genderGraph = document.querySelector('#genderGraph')
+let maleSection = document.createElement('p')
+maleSection.className = "maleGraph genderGraphPiece"
+let femSection = document.createElement('p')
+femSection.className = "femGraph genderGraphPiece"
+maleSection.textContent = `${males.length} Men`
+femSection.textContent = `${females.length} Women`
+genderGraph.appendChild(maleSection)
+genderGraph.appendChild(femSection)
+
+// LEADERSHIP SECTION --------------------------------------------------------------
+let leaders = document.querySelector('#leaders')
+let majority = document.createElement('p')
+majority.className = "statsBody"
+let minority = document.createElement('p')
+minority.className = "statsBody"
+majority.textContent = `${senMajLead[0].first_name} ${senMajLead[0].last_name} is the Senate Majority Leader.`
+minority.textContent = `${senMinLead[0].first_name} ${senMinLead[0].last_name} is the Senate Minority Leader.`
+leaders.appendChild(majority)
+leaders.appendChild(minority)
 
 
 // SCROLL TO TOP BUTTON --------------------------------------------------------------
-// When the user scrolls down 250px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -72,10 +120,4 @@ function scrollFunction() {
     } else {
         document.getElementById("senBtn").style.display = "none";
     }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
