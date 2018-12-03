@@ -189,11 +189,11 @@ text-align: center;
   background-color: rgb(201, 27, 27);
   color: rgb(235, 233, 233);
   cursor: pointer;
-  padding: 15px;
+  padding: 5px;
   border-radius: 50%;
-  font-size: 19px;
-  width: 55px;
-  height: 55px;
+  font-size: 21px;
+  width: 50px;
+  height: 50px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   transition: 0.3s;
 }
@@ -281,27 +281,24 @@ background-color: red;
   z-index: 99; 
   border: none;
   outline: none;
-  background-color: #666;
-  color: rgb(235, 233, 233);
+  color: #666666;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
   border-radius: 50%;
-  font-size: 19px;
-  width: 55px;
-  height: 55px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  font-size: 21px;
+  width: 50px;
+  height: 50px;
   transition: 0.3s;
 }
 
 #senBtn:hover {
-  background-color: rgb(85, 85, 85);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.35);
+  background-color: #f1f1f1;
 }
 
 /* The hero image */
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/senator-img/capitol.jpg");
-  height: 55%;
+  height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -321,7 +318,7 @@ background-color: red;
 .senStats {
   background-color: #e0e0e0;
   border-radius: 5px;
-  width: 700px;;
+  width: 850px;;
   margin: auto;
   margin-top: 16px;
   padding: 20px;
@@ -388,7 +385,7 @@ color: white;
   margin: 40px 0x;;
   max-width: 1800px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0px 50px;
 }
 
 .senContainer img {
@@ -412,13 +409,13 @@ figcaption {
 
 #partyGraph {
   display: block;
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
 
 #genderGraph {
   display: block;
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
 
@@ -427,7 +424,7 @@ figcaption {
   display: inline-block;
   padding: 10px;
   font-size: 12px;
-  width: 213.333px;
+  width: 246.667px;
 }
 
 .genderGraphPiece {
@@ -435,7 +432,7 @@ figcaption {
   display: inline-block;
   padding: 10px;
   font-size: 12px;
-  width: 330px;
+  width: 380px;
 }
 
 .repGraph {

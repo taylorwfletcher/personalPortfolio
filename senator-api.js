@@ -59,6 +59,11 @@ senWithPics.forEach(senator => {
     pictureDiv.appendChild(senatorFig)
     })
 
+// let infoOverlay = document.querySelector('#overlayDiv')
+// let reelection = document.createElement('p')
+// reelection.textContent = `${senator.next_election}`
+// infoOverlay.appendChild(reelection)
+
 // STATS SECTION --------------------------------------------------------------
 let loyalty = document.querySelector('#loyalty')
 let loyalRep = document.createElement('p')
