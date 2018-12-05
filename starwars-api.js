@@ -9,7 +9,6 @@ films.forEach((film) => {
   let listItem = document.createElement('li')
   listItem.textContent = film.title
   filmList.appendChild(listItem)
-  console.log(film.title)
 })
 
 
@@ -19,5 +18,4 @@ films.forEach((film) => {
   let listItem3 = document.createElement('li')
   listItem3.textContent = film.opening_crawl
   crawlList.appendChild(listItem3)
-  console.log(film.opening_crawl)
 })

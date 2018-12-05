@@ -20,20 +20,6 @@ const senMajLead = senators.filter(senator => senator.leadership_role === "Major
 
 const senMinLead = senators.filter(senator => senator.leadership_role === "Minority Leader")
 
-console.log(`There are ${republicans.length} republicans and ${democrats.length} democrats in the Senate.`)
-
-console.log(`There are ${males.length} men and ${females.length} women in the senate.`)
-
-console.log(`The most loyal republican is Senator ${loyalRepublican.first_name} ${loyalRepublican.last_name}.`)
-
-console.log(`The most loyal democrat is Senator ${loyalDemocrat.first_name} ${loyalDemocrat.last_name}.`)
-
-console.log(senMajLead, senMinLead)
-
-console.log(`${senMajLead[0].first_name} ${senMajLead[0].last_name} is the Senate Majority Leader.`)
-
-console.log(`${senMinLead[0].first_name} ${senMinLead[0].last_name} is the Senate Minority Leader.`)
-
 
 // SENATOR CARDS --------------------------------------------------------------
 const senWithPics = senators.map(senator => {
@@ -43,8 +29,6 @@ const senWithPics = senators.map(senator => {
     }
     return senator
 })
-
-console.log(senWithPics)
 
 let pictureDiv = document.querySelector('.senContainer')
 senWithPics.forEach(senator => {
