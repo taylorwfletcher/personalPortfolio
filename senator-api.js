@@ -32,15 +32,34 @@ const senWithPics = senators.map(senator => {
 
 let pictureDiv = document.querySelector('.senContainer')
 senWithPics.forEach(senator => {
+    let cardContainer = document.createElement('div')
+    cardContainer.className = "card-container"
     let senatorPic = document.createElement('img')
     let senatorFig = document.createElement('figure')
     senatorFig.className = "sen-card"
     let senatorCap = document.createElement('figcaption')
     senatorCap.textContent = `${senator.first_name} ${senator.last_name} \n (${senator.party} - ${senator.state})`
+    let infoOverlay = document.createElement('div')
+    infoOverlay.className = "overlay"
+    if (senator.party === "R") {
+        infoOverlay.style.backgroundColor = "#db1a21"
+    } else if (senator.party === "D") {
+        infoOverlay.style.backgroundColor = "#00aef3"
+    } else if (senator.party === "I") {
+        infoOverlay.style.backgroundColor = "#808080"
+    };
+    let reelection = document.createElement('p')
+    reelection.textContent = `Up for re-election in ${senator.next_election}.`
+    let rank = document.createElement('p')
+    rank.textContent = `${senator.short_title} ${senator.last_name} is the ${senator.state_rank} senator from ${senator.state}.`
     senatorPic.src = senator.imgURL
+    infoOverlay.appendChild(rank)
+    infoOverlay.appendChild(reelection)
     senatorFig.appendChild(senatorPic)
     senatorFig.appendChild(senatorCap)
-    pictureDiv.appendChild(senatorFig)
+    cardContainer.appendChild(senatorFig)
+    cardContainer.appendChild(infoOverlay)
+    pictureDiv.appendChild(cardContainer)
     })
 
 // let infoOverlay = document.querySelector('#overlayDiv')
@@ -60,29 +79,39 @@ loyalty.appendChild(loyalRep)
 loyalty.appendChild(loyalDem)
 
 // PARTY GRAPH --------------------------------------------------------------
+let repGraphWidth = Number(`${republicans.length}`) - 10
+let demGraphWidth = Number(`${democrats.length}`) - 10
+let indieGraphWidth = Number(`${independents.length}`)
+
+
 let graphDiv = document.querySelector('#partyGraph')
 let repSection = document.createElement('p')
 repSection.className = "repGraph partyGraphPiece"
+repSection.style.width = repGraphWidth + '%'
 let demSection = document.createElement('p')
 demSection.className = "demGraph partyGraphPiece"
+demSection.style.width = demGraphWidth + '%'
 let indieSection = document.createElement('p')
 indieSection.className = "indieGraph partyGraphPiece"
+indieSection.style.width = indieGraphWidth + '%'
 repSection.textContent = `${republicans.length} Republicans`
 demSection.textContent = `${democrats.length} Democrats`
 indieSection.textContent = `${independents.length} Independents`
 graphDiv.appendChild(repSection)
 graphDiv.appendChild(demSection)
 graphDiv.appendChild(indieSection)
-// document.getElementById("repSection").style.width = `${republicans.length}%`;
-// document.getElementById("demSection").style.width = `${democrats.length}%`;
-// document.getElementById("indieSection").style.width = `${independents.length}%`;
 
 // GENDER GRAPH --------------------------------------------------------------
+let maleGraphWidth = Number(`${males.length}`) - 10
+let femaleGraphWidth = Number(`${females.length}`) - 10
+
 let genderGraph = document.querySelector('#genderGraph')
 let maleSection = document.createElement('p')
 maleSection.className = "maleGraph genderGraphPiece"
+maleSection.style.width = maleGraphWidth + '%'
 let femSection = document.createElement('p')
 femSection.className = "femGraph genderGraphPiece"
+femSection.style.width = femaleGraphWidth + '%'
 maleSection.textContent = `${males.length} Men`
 femSection.textContent = `${females.length} Women`
 genderGraph.appendChild(maleSection)
