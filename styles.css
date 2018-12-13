@@ -167,7 +167,7 @@ text-align: center;
   display: none;
   position: fixed;
   bottom: 30px; 
-  left: 30px; 
+  left: 34px; 
   z-index: 99; 
   border: none;
   outline: none;
@@ -274,6 +274,7 @@ background-color: red;
   width: 50px;
   height: 50px;
   transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 #senBtn:hover {
@@ -321,13 +322,6 @@ background-color: red;
 
 /* filter buttons -------------------------*/
 .filterDiv {
-  float: left;
-  background-color: #2196F3;
-  color: #ffffff;
-  width: 100px;
-  line-height: 100px;
-  text-align: center;
-  margin: 2px;
   display: none; /* Hidden by default */
 }
 
@@ -341,6 +335,7 @@ background-color: red;
   display: block;
   margin: 0 auto;
   padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .btn {
@@ -367,10 +362,9 @@ color: white;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 40px 0x;;
   max-width: 1800px;
-  overflow: hidden;
   margin: 0px 50px;
+  transform: translate(-55px, -30px);
 }
 
 .senContainer img {
@@ -380,7 +374,7 @@ color: white;
 .card-container {
   width: 200px;
   height: 280px;
-  padding: 20px;
+  padding: 40px;
 }
 
 .sen-card {
