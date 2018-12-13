@@ -91,10 +91,14 @@ h2 {
 }
 
 #about {
-  min-height: 70vh;
-  padding-top: 30vh;
+  min-height: 75vh;
+  padding-top: 25vh;
   text-align: center;
   margin: 0 10%;
+}
+
+#about h3 {
+  font-style: italic;
 }
 
 #skill-icons {
@@ -108,8 +112,8 @@ h2 {
   height: 50px;
 }
 #projects {
-  min-height: 70vh;
-  padding-top: 30vh;
+  min-height: 75vh;
+  padding-top: 25vh;
   background-color: white;
   text-align: center;
 }
@@ -152,8 +156,8 @@ h2 {
 }
 
 #contact {
- min-height: 55vh;
- padding-top: 45vh;
+ min-height: 60vh;
+ padding-top: 40vh;
 }
 
 #social-icons {
